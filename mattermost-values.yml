@@ -1,0 +1,38 @@
+persistence:
+  ## This volume persists generated data from users, like images, attachments...
+  ##
+  data:
+    enabled: true
+    size: 10Gi
+    ## If defined, volume.beta.kubernetes.io/storage-class: <storageClass>
+    ## Default: volume.alpha.kubernetes.io/storage-class: default
+    ##
+    storageClass: mattermost-sc
+    accessMode: ReadWriteOnce
+service:
+  type: LoadBalancer
+  externalPort: 80
+  internalPort: 8065
+mysql:
+  enabled: true
+  mysqlRootPassword: ""
+  mysqlUser: "ohubabs"
+  mysqlPassword: "ohubabs1"
+  mysqlDatabase: mattermost
+
+  repository: mysql
+  imageTag: '8.0.18'
+  testFramework:
+    enabled: false
+
+  persistence:
+    enabled: true
+    ## If defined, storageClassName: <storageClass>
+    ## If set to "-", storageClassName: "", which disables dynamic provisioning
+    ## If undefined (the default) or set to null, no storageClassName spec is
+    ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+    ##   GKE, AWS & OpenStack)
+    ##
+    storageClass: "mysql-sc"
+    accessMode: ReadWriteOnce
+    size: 10Gi
