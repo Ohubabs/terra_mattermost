@@ -1,7 +1,7 @@
-resource "kubernetes_ingress_v1" "mattermost" {
+resource "kubernetes_ingress_v1" "mattermost-ingress" {
   wait_for_load_balancer = true
   metadata {
-    name = "mattermost"
+    name = "mattermost-ingress"
     namespace = "default"
     annotations = {
         "alb.ingress.kubernetes.io/load-balancer-name" = "mattermost"
@@ -17,23 +17,6 @@ resource "kubernetes_ingress_v1" "mattermost" {
         name = "mattermost-team-edition"
         port {
           number = 80
-        }
-      }
-    }
-    rule {
-      host = "mattermost.devopsnetwork.net"  
-      http {
-        path {
-          path = "/"
-          path_type = "Exact"
-          backend {
-            service {
-              name = "mattermost-team-edition"
-              port {
-                number = 80
-              }
-            }
-          }
         }
       }
     }
