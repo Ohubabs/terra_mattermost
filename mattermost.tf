@@ -5,7 +5,7 @@ resource "helm_release" "mattermost" {
   chart      = "mattermost-team-edition"
 
   values = [
-    "${file("matter-value.yml")}"
+    "${file("mattermost-values.yml")}"
   ]
 }
 
