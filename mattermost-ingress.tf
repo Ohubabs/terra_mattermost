@@ -20,6 +20,23 @@ resource "kubernetes_ingress_v1" "mattermost-ingress" {
         }
       }
     }
+    rule {
+      host = "mattermost.devopsnetwork.net"  
+      http {
+        path {
+          path = "/"
+          path_type = "Exact"
+          backend {
+            service {
+              name = "mattermost-team-edition"
+              port {
+                number = 80
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
