@@ -10,7 +10,7 @@ persistence:
     storageClass: mattermost-sc
     accessMode: ReadWriteOnce
 service:
-  type: LoadBalancer
+  type: NodePort
   externalPort: 80
   internalPort: 8065
 mysql:
