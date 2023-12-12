@@ -4,12 +4,12 @@ pipeline{
   }
     stages{
         stage('Clone Code'){
-            steps{
-                sh "echo cloning code"
-                sh "echo clone code complete"
-                git 'https://github.com/Ohubabs/terra_mattermost.git'
-            }
-        }
+            #steps{
+            #    sh "echo cloning code"
+            #    sh "echo clone code complete"
+            #    git 'https://github.com/Ohubabs/terra_mattermost.git'
+            #}
+        #}
         stage('Initialize Terraform'){
             steps{
                 sh "echo 'Deploy Tesla To Cluster'"
