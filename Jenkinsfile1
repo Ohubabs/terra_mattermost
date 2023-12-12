@@ -3,7 +3,7 @@ pipeline{
         label 'terra'
   }
     stages{
-        stage('Clone Code'){
+        #stage('Clone Code'){
             #steps{
             #    sh "echo cloning code"
             #    sh "echo clone code complete"
