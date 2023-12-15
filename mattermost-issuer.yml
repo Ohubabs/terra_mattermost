@@ -25,7 +25,7 @@ spec:
           hostedZoneID: Z00777903RWLGIFSJQB59
           accessKeyIDSecretRef:
             name: konoha
-            key: access-key-id
+            key: ichiraku
           secretAccessKeySecretRef:
             name: konoha
-            key: secret-access-key
+            key: ramen
