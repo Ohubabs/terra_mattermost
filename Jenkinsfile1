@@ -22,12 +22,12 @@ pipeline{
         //      sh "kubectl apply -f analytics-secret.yml"   
         //    }
         //}
-        //stage('Create Mattermost ClusterIssuer'){
-        //    steps{
-        //      sh "echo 'Create Cluster Issuer for Mattermost'"
-        //      sh "kubectl apply -f mattermost-issuer.yml"   
-        //    }
-        //}
+        stage('Create Mattermost ClusterIssuer'){
+            steps{
+              sh "echo 'Create Cluster Issuer for Mattermost'"
+              sh "kubectl apply -f mattermost-issuer.yml"   
+            }
+        }
         stage('Initialize Terraform Environment'){
             steps{
               sh "echo 'Initialize Terraform'"
